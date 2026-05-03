@@ -10,3 +10,4 @@ This is part of a frontend for dry EEG electrode data acquisition
 
 Constraints
 - } -190 -50 0 0 0.4 0.4 {}
+C {ota.sym} 270 250 0 0 {name=x1}
