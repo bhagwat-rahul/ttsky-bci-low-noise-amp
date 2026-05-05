@@ -55,9 +55,9 @@ pinout:
     uio[7]: ""
 
     # Analog pins - make sure to also set "analog_pins" above, else the pins won't be connected
-    ua[0]: ""
-    ua[1]: ""
-    ua[2]: ""
+    ua[0]: "VOUT" # de-noised output
+    ua[1]: "VIN_P" # input 1 from channel 01
+    ua[2]: "VIN_N" # input 2 from reference channel
     ua[3]: ""
     ua[4]: ""
     ua[5]: ""
