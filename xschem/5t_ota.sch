@@ -5,17 +5,19 @@ V {}
 S {}
 F {}
 E {}
-N 120 -150 120 -110 {lab=#net1}
+T {This is a 5T_OTA to be used within an AC-coupled LNA for dry eeg electrode signal detection.} -470 -490 0 0 0.4 0.4 {}
+N 120 -150 120 -110 {lab=VOUT}
 N -120 -210 120 -210 {lab=VGND}
-N 120 -110 120 -60 {lab=#net1}
-N -120 -150 -120 -60 {lab=#net2}
-N -80 -180 80 -180 {lab=#net2}
-N -120 -150 -80 -150 {lab=#net2}
-N -80 -180 -80 -150 {lab=#net2}
-N -120 0 120 0 {lab=#net3}
-N 0 0 0 40 {lab=#net3}
+N 120 -110 120 -60 {lab=VOUT}
+N -120 -150 -120 -60 {lab=#net1}
+N -80 -180 80 -180 {lab=#net1}
+N -120 0 120 0 {lab=#net2}
+N 0 0 0 40 {lab=#net2}
 N -0 100 0 250 {lab=VDPWR}
 N -0 -310 0 -210 {lab=VGND}
+N -0 -180 -0 -150 {lab=#net1}
+N -120 -150 0 -150 {lab=#net1}
+N 120 -110 300 -110 {lab=VOUT}
 C {sky130_fd_pr/nfet_01v8.sym} -100 -180 2 0 {name=M1
 W=1
 L=0.15
@@ -90,3 +92,4 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {iopin.sym} 0 250 1 0 {name=VDPWR lab=VDPWR}
+C {opin.sym} 300 -110 0 0 {name=VOUT lab=VOUT}
