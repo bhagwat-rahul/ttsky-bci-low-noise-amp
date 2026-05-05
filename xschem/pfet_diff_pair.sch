@@ -6,7 +6,7 @@ S {}
 F {}
 E {}
 T {Differential pair that forms basis for a 5 transistor OTA.
-Voltage of vin_1 is subtracted from vin_2.} -270 -310 0 0 0.4 0.4 {}
+Voltage vin_n to be subtracted from vin_p.} -270 -310 0 0 0.4 0.4 {}
 N -100 30 -100 100 {lab=drain_p}
 N 100 30 100 100 {lab=xxx}
 N 140 -0 220 0 {lab=VIN_N}
