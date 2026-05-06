@@ -19,7 +19,7 @@ N 150 -0 280 0 {lab=0}
 N -200 -20 -150 -20 {lab=VIN_P}
 N -200 0 -150 0 {lab=VIN_N}
 N 150 20 230 20 {lab=VDPWR}
-C {vsource.sym} -200 -50 2 0 {name=V1 value="DC 0.9" savecurrent=false}
+C {vsource.sym} -200 -50 2 0 {name=V1 value="DC 0.901" savecurrent=false}
 C {vsource.sym} -200 30 0 0 {name=V2 value="DC 0.9" savecurrent=false}
 C {vsource.sym} 230 50 0 0 {name=V3 value="DC 1.8" savecurrent=false}
 C {gnd.sym} 0 -80 2 0 {name=l1 lab=0}
@@ -31,11 +31,12 @@ C {lab_pin.sym} 150 -20 0 1 {name=VOUT sig_type=std_logic lab=VOUT}
 C {code_shown.sym} 20 -280 0 0 {name=s1 only_toplevel=false
 value=
 "
-.lib $PDK_ROOT/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
 .control
+save all
 op
-display
+write /foss/designs/ttsky-bci-low-noise-amp/xschem/simulation/5t_ota_tb.raw
 print v(vout)
 .endc
-.end
 "}
