@@ -13,14 +13,27 @@ N -120 -150 -120 -60 {lab=#net1}
 N -80 -180 80 -180 {lab=#net1}
 N -120 0 120 0 {lab=#net2}
 N 0 0 0 40 {lab=#net2}
-N -0 100 0 250 {lab=VDPWR}
-N -0 -310 0 -210 {lab=VGND}
+N 0 100 0 250 {lab=VDPWR}
 N -0 -180 -0 -150 {lab=#net1}
 N -120 -150 0 -150 {lab=#net1}
 N 120 -110 300 -110 {lab=VOUT}
 N -120 -30 120 -30 {lab=VDPWR}
 N 50 -30 50 250 {lab=VDPWR}
-N -280 250 290 250 {lab=VDPWR}
+N -340 130 -310 130 {lab=VDPWR}
+N -310 90 -280 90 {lab=#net3}
+N -310 -10 -280 -10 {lab=#net3}
+N -340 -50 -310 -50 {lab=VGND}
+N -0 -240 0 -210 {lab=VGND}
+N -420 -240 0 -240 {lab=VGND}
+N -380 250 240 250 {lab=VDPWR}
+N -0 70 0 100 {lab=VDPWR}
+N -420 -240 -420 -0 {lab=VGND}
+N -420 -50 -340 -50 {lab=VGND}
+N -280 -50 -280 130 {lab=#net3}
+N -340 130 -340 250 {lab=VDPWR}
+N -280 70 -40 70 {lab=#net3}
+N -120 -210 -120 -180 {lab=VGND}
+N 120 -210 120 -180 {lab=VGND}
 C {sky130_fd_pr/nfet_01v8.sym} -100 -180 2 0 {name=M1
 W=1
 L=0.15
@@ -49,7 +62,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {iopin.sym} 0 -310 3 0 {name=VGND lab=VGND}
+C {iopin.sym} -420 -110 0 1 {name=VGND lab=VGND}
 C {sky130_fd_pr/pfet_01v8.sym} -140 -30 2 1 {name=M3
 W=1
 L=0.15
@@ -80,7 +93,7 @@ spiceprefix=X
 }
 C {ipin.sym} 160 -30 0 1 {name=VIN_N lab=VIN_N}
 C {ipin.sym} -160 -30 0 0 {name=VIN_P lab=VIN_P}
-C {sky130_fd_pr/pfet_01v8.sym} 20 70 2 0 {name=M5
+C {sky130_fd_pr/pfet_01v8.sym} -20 70 2 1 {name=M5
 W=1
 L=0.15
 nf=1
@@ -96,3 +109,31 @@ spiceprefix=X
 }
 C {iopin.sym} 0 250 1 0 {name=VDPWR lab=VDPWR}
 C {opin.sym} 300 -110 0 0 {name=VOUT lab=VOUT}
+C {sky130_fd_pr/pfet_01v8.sym} -310 110 3 1 {name=M6
+W=1
+L=0.15
+nf=1
+mult=1
+ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
+pd="expr('2*int((@nf + 1)/2) * (@W / @nf + 0.29)')"
+as="expr('int((@nf + 2)/2) * @W / @nf * 0.29')"
+ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
+nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}
+C {sky130_fd_pr/nfet_01v8.sym} -310 -30 1 1 {name=M7
+W=1
+L=0.15
+nf=1 
+mult=1
+ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
+pd="expr('2*int((@nf + 1)/2) * (@W / @nf + 0.29)')"
+as="expr('int((@nf + 2)/2) * @W / @nf * 0.29')"
+ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
+nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
+}
