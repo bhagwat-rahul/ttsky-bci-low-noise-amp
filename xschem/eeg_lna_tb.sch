@@ -1,4 +1,4 @@
-v {xschem version=3.4.8RC file_version=1.3}
+v {xschem version=3.4.8RC file_version=1.2}
 G {}
 K {}
 V {}
@@ -29,4 +29,5 @@ write lna_tb.raw
 
 .end
 "}
-C {eeg_lna.sym} -10 0 0 0 {name=x1}
+C {/foss/designs/ttsky-bci-low-noise-amp/xschem/eeg_lna.sym} -10 0 0 0 {name=x1}
+C {lab_pin.sym} 140 0 2 0 {name=VOUT sig_type=std_logic lab=VOUT}
