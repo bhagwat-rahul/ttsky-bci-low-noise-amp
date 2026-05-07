@@ -36,11 +36,11 @@ N 120 -210 120 -180 {lab=VGND}
 N -340 110 -340 250 {lab=VDPWR}
 N -280 -50 -280 110 {lab=BIAS_P}
 N -180 -110 -180 -90 {lab=EEG_IN}
-N -180 -30 -160 -30 {lab=vin_p}
-N -180 -30 -180 -10 {lab=vin_p}
+N -180 -30 -160 -30 {lab=#net3}
+N -180 -30 -180 -10 {lab=#net3}
 N -180 50 -180 70 {lab=BIAS_P}
-N 160 -40 160 -30 {lab=vin_n}
-N 160 -30 160 -20 {lab=vin_n}
+N 160 -40 160 -30 {lab=#net4}
+N 160 -30 160 -20 {lab=#net4}
 N 160 -110 160 -100 {lab=VOUT}
 N 160 40 160 50 {lab=BIAS_P}
 C {sky130_fd_pr/nfet_01v8.sym} -100 -180 2 0 {name=M1
@@ -55,7 +55,7 @@ ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
 nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
 sa=0 sb=0 sd=0
 model=nfet_01v8
-spiceprefix=M
+spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 100 -180 2 1 {name=M2
 W=1
@@ -69,7 +69,7 @@ ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
 nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
 sa=0 sb=0 sd=0
 model=nfet_01v8
-spiceprefix=M
+spiceprefix=X
 }
 C {iopin.sym} -420 -110 0 1 {name=VGND lab=VGND}
 C {sky130_fd_pr/pfet_01v8.sym} -140 -30 2 1 {name=M3
@@ -84,7 +84,7 @@ ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
 nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
 sa=0 sb=0 sd=0
 model=pfet_01v8
-spiceprefix=M
+spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8.sym} 140 -30 2 0 {name=M4
 W=1
@@ -98,7 +98,7 @@ ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
 nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
 sa=0 sb=0 sd=0
 model=pfet_01v8
-spiceprefix=M
+spiceprefix=X
 }
 C {ipin.sym} -180 -110 0 0 {name=EEG_IN lab=EEG_IN}
 C {sky130_fd_pr/pfet_01v8.sym} -20 70 2 1 {name=M5
@@ -113,7 +113,7 @@ ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
 nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
 sa=0 sb=0 sd=0
 model=pfet_01v8
-spiceprefix=M
+spiceprefix=X
 }
 C {iopin.sym} 0 250 1 0 {name=VDPWR lab=VDPWR}
 C {opin.sym} 300 -110 0 0 {name=VOUT lab=VOUT}
@@ -129,7 +129,7 @@ ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
 nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
 sa=0 sb=0 sd=0
 model=pfet_01v8
-spiceprefix=M
+spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} -310 -30 1 1 {name=M7
 W=1
@@ -143,7 +143,7 @@ ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
 nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
 sa=0 sb=0 sd=0
 model=nfet_01v8
-spiceprefix=M
+spiceprefix=X
 }
 C {sky130_fd_pr/cap_mim_m3_1.sym} -180 -60 2 0 {name=CIN model=cap_mim_m3_1 W=1 L=1 MF=1 spiceprefix=X}
 C {lab_pin.sym} -180 70 3 0 {name=BIAS_P sig_type=std_logic lab=BIAS_P}
