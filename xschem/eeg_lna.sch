@@ -5,22 +5,23 @@ V {}
 S {}
 F {}
 E {}
-T {This is a 5T_OTA to be used within an AC-coupled LNA for dry eeg electrode signal detection.} -470 -490 0 0 0.4 0.4 {}
+T {This is a an lna consisting of a 5T-OTA and an internally generated bias current.
+To be used for dry EEG data acquisition} -470 -490 0 0 0.4 0.4 {}
 N 120 -150 120 -110 {lab=VOUT}
 N -120 -210 120 -210 {lab=VGND}
 N 120 -110 120 -60 {lab=VOUT}
-N -120 -150 -120 -60 {lab=MIRROR_BIAS_N}
-N -80 -180 80 -180 {lab=MIRROR_BIAS_N}
-N -120 0 120 0 {lab=TAIL_P}
-N 0 0 0 40 {lab=TAIL_P}
+N -120 -150 -120 -60 {lab=#net1}
+N -80 -180 80 -180 {lab=#net1}
+N -120 0 120 0 {lab=#net2}
+N 0 0 0 40 {lab=#net2}
 N 0 100 0 250 {lab=VDPWR}
-N -0 -180 -0 -150 {lab=MIRROR_BIAS_N}
-N -120 -150 0 -150 {lab=MIRROR_BIAS_N}
+N -0 -180 -0 -150 {lab=#net1}
+N -120 -150 0 -150 {lab=#net1}
 N 120 -110 300 -110 {lab=VOUT}
 N -120 -30 120 -30 {lab=VDPWR}
 N 50 -30 50 250 {lab=VDPWR}
-N -340 130 -310 130 {lab=VDPWR}
-N -310 90 -280 90 {lab=BIAS_P}
+N -340 110 -310 110 {lab=VDPWR}
+N -310 70 -280 70 {lab=BIAS_P}
 N -310 -10 -280 -10 {lab=BIAS_P}
 N -340 -50 -310 -50 {lab=VGND}
 N -0 -240 0 -210 {lab=VGND}
@@ -29,14 +30,22 @@ N -380 250 240 250 {lab=VDPWR}
 N -0 70 0 100 {lab=VDPWR}
 N -420 -240 -420 -0 {lab=VGND}
 N -420 -50 -340 -50 {lab=VGND}
-N -280 -50 -280 130 {lab=BIAS_P}
-N -340 130 -340 250 {lab=VDPWR}
 N -280 70 -40 70 {lab=BIAS_P}
 N -120 -210 -120 -180 {lab=VGND}
 N 120 -210 120 -180 {lab=VGND}
+N -340 110 -340 250 {lab=VDPWR}
+N -280 -50 -280 110 {lab=BIAS_P}
+N -180 -110 -180 -90 {lab=EEG_IN}
+N -180 -30 -160 -30 {lab=vin_p}
+N -180 -30 -180 -10 {lab=vin_p}
+N -180 50 -180 70 {lab=BIAS_P}
+N 160 -40 160 -30 {lab=vin_n}
+N 160 -30 160 -20 {lab=vin_n}
+N 160 -110 160 -100 {lab=VOUT}
+N 160 40 160 50 {lab=BIAS_P}
 C {sky130_fd_pr/nfet_01v8.sym} -100 -180 2 0 {name=M1
 W=1
-L=0.15
+L=1.0
 nf=1 
 mult=1
 ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
@@ -50,7 +59,7 @@ spiceprefix=M
 }
 C {sky130_fd_pr/nfet_01v8.sym} 100 -180 2 1 {name=M2
 W=1
-L=0.15
+L=1.0
 nf=1 
 mult=1
 ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
@@ -65,7 +74,7 @@ spiceprefix=M
 C {iopin.sym} -420 -110 0 1 {name=VGND lab=VGND}
 C {sky130_fd_pr/pfet_01v8.sym} -140 -30 2 1 {name=M3
 W=1
-L=0.15
+L=1.0
 nf=1
 mult=1
 ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
@@ -79,7 +88,7 @@ spiceprefix=M
 }
 C {sky130_fd_pr/pfet_01v8.sym} 140 -30 2 0 {name=M4
 W=1
-L=0.15
+L=1.0
 nf=1
 mult=1
 ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
@@ -91,11 +100,10 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=M
 }
-C {ipin.sym} 160 -30 0 1 {name=VIN_N lab=VIN_N}
-C {ipin.sym} -160 -30 0 0 {name=VIN_P lab=VIN_P}
+C {ipin.sym} -180 -110 0 0 {name=EEG_IN lab=EEG_IN}
 C {sky130_fd_pr/pfet_01v8.sym} -20 70 2 1 {name=M5
 W=1
-L=0.15
+L=1.0
 nf=1
 mult=1
 ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
@@ -109,9 +117,9 @@ spiceprefix=M
 }
 C {iopin.sym} 0 250 1 0 {name=VDPWR lab=VDPWR}
 C {opin.sym} 300 -110 0 0 {name=VOUT lab=VOUT}
-C {sky130_fd_pr/pfet_01v8.sym} -310 110 3 1 {name=M6
+C {sky130_fd_pr/pfet_01v8.sym} -310 90 3 1 {name=M6
 W=1
-L=0.15
+L=1.0
 nf=1
 mult=1
 ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
@@ -125,7 +133,7 @@ spiceprefix=M
 }
 C {sky130_fd_pr/nfet_01v8.sym} -310 -30 1 1 {name=M7
 W=1
-L=0.15
+L=1.0
 nf=1 
 mult=1
 ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
@@ -137,3 +145,21 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=M
 }
+C {sky130_fd_pr/cap_mim_m3_1.sym} -180 -60 2 0 {name=CIN model=cap_mim_m3_1 W=1 L=1 MF=1 spiceprefix=X}
+C {lab_pin.sym} -180 70 3 0 {name=BIAS_P sig_type=std_logic lab=BIAS_P}
+C {res.sym} -180 20 0 0 {name=RBIAS
+value=1Gig
+footprint=1206
+device=resistor
+m=1}
+C {lab_pin.sym} 160 50 3 0 {name=BIAS_P1 sig_type=std_logic lab=BIAS_P}
+C {res.sym} 160 -70 0 0 {name=RF
+value=1Meg
+footprint=1206
+device=resistor
+m=1}
+C {res.sym} 160 10 0 0 {name=RG
+value=10k
+footprint=1206
+device=resistor
+m=1}
