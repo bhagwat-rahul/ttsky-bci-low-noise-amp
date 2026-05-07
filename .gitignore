@@ -2,6 +2,8 @@
 .idea
 .vscode
 *.vcd
+# Ignore raw simulation output, can rerun everytime doesn't make sense to checkin so it goes out of sync w design
+*.raw
 runs
 tt_submission
 src/user_config.tcl
