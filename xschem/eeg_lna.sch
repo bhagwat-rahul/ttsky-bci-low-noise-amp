@@ -145,7 +145,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/cap_mim_m3_1.sym} -180 -60 2 0 {name=CIN model=cap_mim_m3_1 W=20 L=20 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -180 -60 2 0 {name=CIN model=cap_mim_m3_1 W=100 L=100 MF=1 spiceprefix=X}
 C {lab_pin.sym} -180 70 3 0 {name=BIAS_P sig_type=std_logic lab=BIAS_P}
 C {res.sym} -180 20 0 0 {name=RBIAS
 value=1Gig
