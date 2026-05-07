@@ -46,7 +46,7 @@ ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
 nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
 sa=0 sb=0 sd=0
 model=nfet_01v8
-spiceprefix=X
+spiceprefix=M
 }
 C {sky130_fd_pr/nfet_01v8.sym} 100 -180 2 1 {name=M2
 W=1
@@ -60,7 +60,7 @@ ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
 nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
 sa=0 sb=0 sd=0
 model=nfet_01v8
-spiceprefix=X
+spiceprefix=M
 }
 C {iopin.sym} -420 -110 0 1 {name=VGND lab=VGND}
 C {sky130_fd_pr/pfet_01v8.sym} -140 -30 2 1 {name=M3
@@ -75,7 +75,7 @@ ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
 nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
 sa=0 sb=0 sd=0
 model=pfet_01v8
-spiceprefix=X
+spiceprefix=M
 }
 C {sky130_fd_pr/pfet_01v8.sym} 140 -30 2 0 {name=M4
 W=1
@@ -89,7 +89,7 @@ ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
 nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
 sa=0 sb=0 sd=0
 model=pfet_01v8
-spiceprefix=X
+spiceprefix=M
 }
 C {ipin.sym} 160 -30 0 1 {name=VIN_N lab=VIN_N}
 C {ipin.sym} -160 -30 0 0 {name=VIN_P lab=VIN_P}
@@ -105,7 +105,7 @@ ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
 nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
 sa=0 sb=0 sd=0
 model=pfet_01v8
-spiceprefix=X
+spiceprefix=M
 }
 C {iopin.sym} 0 250 1 0 {name=VDPWR lab=VDPWR}
 C {opin.sym} 300 -110 0 0 {name=VOUT lab=VOUT}
@@ -121,7 +121,7 @@ ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
 nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
 sa=0 sb=0 sd=0
 model=pfet_01v8
-spiceprefix=X
+spiceprefix=M
 }
 C {sky130_fd_pr/nfet_01v8.sym} -310 -30 1 1 {name=M7
 W=1
@@ -135,5 +135,5 @@ ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
 nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
 sa=0 sb=0 sd=0
 model=nfet_01v8
-spiceprefix=X
+spiceprefix=M
 }
