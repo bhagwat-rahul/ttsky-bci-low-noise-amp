@@ -37,8 +37,6 @@ N -340 110 -340 250 {lab=VDPWR}
 N -280 -50 -280 110 {lab=BIAS_P}
 N -180 -110 -180 -90 {lab=EEG_IN}
 N -180 -30 -160 -30 {lab=VIN_P}
-N -180 -30 -180 -10 {lab=VIN_P}
-N -180 50 -180 70 {lab=BIAS_P}
 N 160 -40 160 -30 {lab=VIN_N}
 N 160 -30 160 -20 {lab=VIN_N}
 N 160 -110 160 -100 {lab=VOUT}
@@ -145,13 +143,8 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/cap_mim_m3_1.sym} -180 -60 2 0 {name=CIN model=cap_mim_m3_1 W=100 L=100 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -180 -60 2 0 {name=CIN model=cap_mim_m3_1 W=40 L=40 MF=1 spiceprefix=X}
 C {lab_pin.sym} -180 70 3 0 {name=BIAS_P sig_type=std_logic lab=BIAS_P}
-C {res.sym} -180 20 0 0 {name=RBIAS
-value=1Gig
-footprint=1206
-device=resistor
-m=1}
 C {lab_pin.sym} 160 50 3 0 {name=BIAS_P1 sig_type=std_logic lab=BIAS_P}
 C {res.sym} 160 -70 0 0 {name=RF
 value=100k
@@ -167,3 +160,10 @@ C {lab_pin.sym} 160 -30 2 0 {name=VIN_N sig_type=std_logic lab=VIN_N}
 C {lab_pin.sym} -160 -30 1 0 {name=VIN_P sig_type=std_logic lab=VIN_P}
 C {lab_pin.sym} -40 0 3 0 {name=TAIL_P sig_type=std_logic lab=TAIL_P}
 C {lab_pin.sym} 30 -180 3 0 {name=MIRROR_BIAS_N sig_type=std_logic lab=MIRROR_BIAS_N}
+C {lab_pin.sym} 550 160 1 0 {name=VIN_P1 sig_type=std_logic lab=VIN_P}
+C {lab_pin.sym} 550 220 2 0 {name=BIAS_P2 sig_type=std_logic lab=BIAS_P}
+C {res.sym} 550 190 0 0 {name=R1
+value=10Gig
+footprint=1206
+device=resistor
+m=1}
