@@ -10,13 +10,13 @@ To be used for dry EEG data acquisition} -470 -490 0 0 0.4 0.4 {}
 N 120 -150 120 -110 {lab=VOUT}
 N -120 -210 120 -210 {lab=VGND}
 N 120 -110 120 -60 {lab=VOUT}
-N -120 -150 -120 -60 {lab=#net1}
-N -80 -180 80 -180 {lab=#net1}
-N -120 0 120 0 {lab=#net2}
-N 0 0 0 40 {lab=#net2}
+N -120 -150 -120 -60 {lab=MIRROR_BIAS_N}
+N -80 -180 80 -180 {lab=MIRROR_BIAS_N}
+N -120 0 120 0 {lab=TAIL_P}
+N 0 0 0 40 {lab=TAIL_P}
 N 0 100 0 250 {lab=VDPWR}
-N -0 -180 -0 -150 {lab=#net1}
-N -120 -150 0 -150 {lab=#net1}
+N -0 -180 -0 -150 {lab=MIRROR_BIAS_N}
+N -120 -150 0 -150 {lab=MIRROR_BIAS_N}
 N 120 -110 300 -110 {lab=VOUT}
 N -120 -30 120 -30 {lab=VDPWR}
 N 50 -30 50 250 {lab=VDPWR}
@@ -36,11 +36,11 @@ N 120 -210 120 -180 {lab=VGND}
 N -340 110 -340 250 {lab=VDPWR}
 N -280 -50 -280 110 {lab=BIAS_P}
 N -180 -110 -180 -90 {lab=EEG_IN}
-N -180 -30 -160 -30 {lab=#net3}
-N -180 -30 -180 -10 {lab=#net3}
+N -180 -30 -160 -30 {lab=VIN_P}
+N -180 -30 -180 -10 {lab=VIN_P}
 N -180 50 -180 70 {lab=BIAS_P}
-N 160 -40 160 -30 {lab=#net4}
-N 160 -30 160 -20 {lab=#net4}
+N 160 -40 160 -30 {lab=VIN_N}
+N 160 -30 160 -20 {lab=VIN_N}
 N 160 -110 160 -100 {lab=VOUT}
 N 160 40 160 50 {lab=BIAS_P}
 C {sky130_fd_pr/nfet_01v8.sym} -100 -180 2 0 {name=M1
@@ -163,3 +163,7 @@ value=10k
 footprint=1206
 device=resistor
 m=1}
+C {lab_pin.sym} 160 -30 2 0 {name=VIN_N sig_type=std_logic lab=VIN_N}
+C {lab_pin.sym} -160 -30 1 0 {name=VIN_P sig_type=std_logic lab=VIN_P}
+C {lab_pin.sym} -40 0 3 0 {name=TAIL_P sig_type=std_logic lab=TAIL_P}
+C {lab_pin.sym} 30 -180 3 0 {name=MIRROR_BIAS_N sig_type=std_logic lab=MIRROR_BIAS_N}
