@@ -1,4 +1,4 @@
-v {xschem version=3.4.8RC file_version=1.3}
+v {xschem version=3.4.8RC file_version=1.2}
 G {}
 K {}
 V {}
@@ -44,7 +44,7 @@ N 160 -30 160 -20 {lab=VIN_N}
 N 160 -110 160 -100 {lab=VOUT}
 N 160 40 160 50 {lab=BIAS_P}
 C {sky130_fd_pr/nfet_01v8.sym} -100 -180 2 0 {name=M1
-W=4
+W=20
 L=1.0
 nf=1 
 mult=1
@@ -58,7 +58,7 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 100 -180 2 1 {name=M2
-W=4
+W=20
 L=1.0
 nf=1 
 mult=1
@@ -73,7 +73,7 @@ spiceprefix=X
 }
 C {iopin.sym} -420 -110 0 1 {name=VGND lab=VGND}
 C {sky130_fd_pr/pfet_01v8.sym} -140 -30 2 1 {name=M3
-W=8
+W=40
 L=1.0
 nf=1
 mult=1
@@ -87,7 +87,7 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8.sym} 140 -30 2 0 {name=M4
-W=8
+W=40
 L=1.0
 nf=1
 mult=1
@@ -102,7 +102,7 @@ spiceprefix=X
 }
 C {ipin.sym} -180 -110 0 0 {name=EEG_IN lab=EEG_IN}
 C {sky130_fd_pr/pfet_01v8.sym} -20 70 2 1 {name=M5
-W=8
+W=30
 L=1.0
 nf=1
 mult=1
@@ -118,7 +118,7 @@ spiceprefix=X
 C {iopin.sym} 0 250 1 0 {name=VDPWR lab=VDPWR}
 C {opin.sym} 300 -110 0 0 {name=VOUT lab=VOUT}
 C {sky130_fd_pr/pfet_01v8.sym} -310 90 3 1 {name=M6
-W=4
+W=10
 L=1.0
 nf=1
 mult=1
@@ -132,7 +132,7 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} -310 -30 1 1 {name=M7
-W=2
+W=5
 L=1.0
 nf=1 
 mult=1
@@ -154,7 +154,7 @@ device=resistor
 m=1}
 C {lab_pin.sym} 160 50 3 0 {name=BIAS_P1 sig_type=std_logic lab=BIAS_P}
 C {res.sym} 160 -70 0 0 {name=RF
-value=1Meg
+value=100k
 footprint=1206
 device=resistor
 m=1}

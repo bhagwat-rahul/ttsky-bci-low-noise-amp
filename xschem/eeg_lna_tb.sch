@@ -23,7 +23,7 @@ value=
 
 .control
 save all
-tran 1m 1
+tran 100u 1
 write lna_tb.raw
 .endc
 
