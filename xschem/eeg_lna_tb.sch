@@ -7,18 +7,18 @@ F {}
 E {}
 N 140 -20 220 -20 {lab=0}
 N 140 20 150 20 {lab=VDPWR}
+N -220 -20 -160 -20 {lab=EEG_IN}
 C {gnd.sym} 220 -20 3 0 {name=GND lab=0}
 C {lab_pin.sym} 150 20 1 1 {name=VDPWR sig_type=std_logic lab=VDPWR}
+C {lab_pin.sym} -220 -20 0 0 {name=EEG_IN sig_type=std_logic lab=EEG_IN}
 C {code_shown.sym} -310 -660 0 0 {name=sim_eeg_lna only_toplevel=false
 
 value=
 "
 .lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 
-.option rshunt=1e12
+.option rshunt=1e15
 .option savecurrents
-
-.include /headless/.xschem/simulations/eeg_lna.spice
 
 * =====================================================
 * INPUT SIGNALS
@@ -60,9 +60,9 @@ print v(eeg_in)
 print v(x1.vin_p)
 print v(x1.vin_n)
 
-print v(x1.tail)
-print v(x1.drain_l)
-print v(x1.drain_r)
+print v(x1.tail_p)
+print v(x1.mirror_bias_n)
+print v(x1.bias_p)
 
 print i(v2)
 
@@ -74,13 +74,13 @@ echo \\"=======================================\\"
 echo \\"MOSFET OPERATING REGIONS\\"
 echo \\"=======================================\\"
 
-show m.x1.xm1
-show m.x1.xm2
-show m.x1.xm3
-show m.x1.xm4
-show m.x1.xm5
-show m.x1.xm6
-show m.x1.xm7
+show m.x1.xm1.msky130_fd_pr__nfet_01v8
+show m.x1.xm2.msky130_fd_pr__nfet_01v8
+show m.x1.xm3.msky130_fd_pr__pfet_01v8
+show m.x1.xm4.msky130_fd_pr__pfet_01v8
+show m.x1.xm5.msky130_fd_pr__pfet_01v8
+show m.x1.xm6.msky130_fd_pr__pfet_01v8
+show m.x1.xm7.msky130_fd_pr__nfet_01v8
 
 * =====================================================
 * TRANSIENT
