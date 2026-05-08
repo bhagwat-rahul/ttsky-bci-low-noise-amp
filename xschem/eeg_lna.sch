@@ -37,12 +37,12 @@ N -340 110 -340 250 {lab=VDPWR}
 N -280 -50 -280 110 {lab=BIAS_P}
 N -180 -110 -180 -90 {lab=EEG_IN}
 N -180 -30 -160 -30 {lab=VIN_P}
-N 160 -40 160 -30 {lab=VIN_N}
-N 160 -30 160 -20 {lab=VIN_N}
-N 160 -110 160 -100 {lab=VOUT}
-N 160 40 160 50 {lab=BIAS_P}
+N 160 30 160 50 {lab=BIAS_P}
+N 160 -30 160 10 {lab=VIN_N}
+N 160 -60 160 -30 {lab=VIN_N}
+N 160 -110 160 -80 {lab=VOUT}
 C {sky130_fd_pr/nfet_01v8.sym} -100 -180 2 0 {name=M1
-W=20
+W=40
 L=1.0
 nf=1 
 mult=1
@@ -56,7 +56,7 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 100 -180 2 1 {name=M2
-W=20
+W=40
 L=1.0
 nf=1 
 mult=1
@@ -71,7 +71,7 @@ spiceprefix=X
 }
 C {iopin.sym} -420 -110 0 1 {name=VGND lab=VGND}
 C {sky130_fd_pr/pfet_01v8.sym} -140 -30 2 1 {name=M3
-W=40
+W=60
 L=1.0
 nf=1
 mult=1
@@ -85,7 +85,7 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8.sym} 140 -30 2 0 {name=M4
-W=40
+W=60
 L=1.0
 nf=1
 mult=1
@@ -100,7 +100,7 @@ spiceprefix=X
 }
 C {ipin.sym} -180 -110 0 0 {name=EEG_IN lab=EEG_IN}
 C {sky130_fd_pr/pfet_01v8.sym} -20 70 2 1 {name=M5
-W=30
+W=15
 L=1.0
 nf=1
 mult=1
@@ -146,20 +146,11 @@ spiceprefix=X
 C {sky130_fd_pr/cap_mim_m3_1.sym} -180 -60 2 0 {name=CIN model=cap_mim_m3_1 W=40 L=40 MF=1 spiceprefix=X}
 C {lab_pin.sym} -180 70 3 0 {name=BIAS_P sig_type=std_logic lab=BIAS_P}
 C {lab_pin.sym} 160 50 3 0 {name=BIAS_P1 sig_type=std_logic lab=BIAS_P}
-C {res.sym} 160 -70 0 0 {name=RF
-value=100k
-footprint=1206
-device=resistor
-m=1}
-C {res.sym} 160 10 0 0 {name=RG
-value=100k
-footprint=1206
-device=resistor
-m=1}
 C {lab_pin.sym} 160 -30 2 0 {name=VIN_N sig_type=std_logic lab=VIN_N}
 C {lab_pin.sym} -160 -30 1 0 {name=VIN_P sig_type=std_logic lab=VIN_P}
 C {lab_pin.sym} -40 0 3 0 {name=TAIL_P sig_type=std_logic lab=TAIL_P}
 C {lab_pin.sym} 30 -180 3 0 {name=MIRROR_BIAS_N sig_type=std_logic lab=MIRROR_BIAS_N}
 C {lab_pin.sym} 560 50 1 0 {name=VIN_P1 sig_type=std_logic lab=VIN_P}
 C {lab_pin.sym} 560 70 2 0 {name=BIAS_P2 sig_type=std_logic lab=BIAS_P}
-C {pseudo_res.sym} 410 60 0 0 {name=x1}
+C {pseudo_res.sym} 310 20 0 1 {name=x1}
+C {pseudo_res.sym} 310 -70 0 1 {name=x2}
