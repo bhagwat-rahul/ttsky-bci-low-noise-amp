@@ -8,9 +8,11 @@ E {}
 N 140 -20 220 -20 {lab=0}
 N 140 20 150 20 {lab=VDPWR}
 N -220 -20 -160 -20 {lab=EEG_IN}
+N -220 20 -160 20 {lab=EEG_REF}
 C {gnd.sym} 220 -20 3 0 {name=GND lab=0}
 C {lab_pin.sym} 150 20 1 1 {name=VDPWR sig_type=std_logic lab=VDPWR}
 C {lab_pin.sym} -220 -20 0 0 {name=EEG_IN sig_type=std_logic lab=EEG_IN}
+C {lab_pin.sym} -220 20 0 0 {name=EEG_REF sig_type=std_logic lab=EEG_REF}
 C {code_shown.sym} -310 -660 0 0 {name=sim_eeg_lna only_toplevel=false
 
 value=
@@ -24,10 +26,10 @@ value=
 * INPUT SIGNALS
 * =====================================================
 
-V1 EEG_IN 0 SIN(0 1m 10) DC 0 AC 1
+V1 EEG_IN EEG_REF SIN(0 1m 10) DC 0 AC 1
 V2 VDPWR 0 DC 1.8
 
-R1 EEG_IN 0 100k
+RREF EEG_REF 0 100k
 
 * =====================================================
 * ANALYSIS CONTROL
@@ -54,6 +56,7 @@ echo \\"=======================================\\"
 
 print v(vout)
 print v(eeg_in)
+print v(eeg_ref)
 
 * IMPORTANT INTERNAL NODES
 * Change names if needed to match your schematic
@@ -92,7 +95,8 @@ echo \\"=======================================\\"
 
 tran 100u 200m
 
-plot v(eeg_in)
+plot v(eeg_in)-v(eeg_ref)
+plot v(eeg_ref)
 plot v(vout)
 
 * DIFFERENTIAL INPUT CHECK
@@ -112,7 +116,7 @@ echo \\"=======================================\\"
 ac dec 20 0.1 10k
 
 * External transfer
-plot db(v(vout)/v(eeg_in))
+plot db(v(vout)/(v(eeg_in)-v(eeg_ref)))
 
 * Internal OTA gain
 plot db(v(vout)/v(x1.vin_p))

@@ -46,6 +46,8 @@ N 330 -110 330 -100 {lab=EEG_IN}
 N 330 -40 330 -30 {lab=VIN_N}
 N -170 120 -170 140 {lab=VIN_P}
 N -170 160 -170 180 {lab=BIAS_P}
+N -560 -110 -560 -100 {lab=EEG_REF}
+N -560 -40 -560 -30 {lab=VIN_P}
 C {sky130_fd_pr/nfet_01v8.sym} -100 -180 2 0 {name=M1
 W=40
 L=1.0
@@ -75,6 +77,7 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {iopin.sym} -420 -110 0 1 {name=VGND lab=VGND}
+C {ipin.sym} -560 -110 0 0 {name=EEG_REF lab=EEG_REF}
 C {sky130_fd_pr/pfet_01v8.sym} -140 -30 2 1 {name=M3
 W=60
 L=1.0
@@ -149,10 +152,13 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/cap_mim_m3_1.sym} 330 -70 0 0 {name=CIN model=cap_mim_m3_1 W=40 L=40 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -560 -70 0 0 {name=CREF model=cap_mim_m3_1 W=40 L=40 MF=1 spiceprefix=X}
 C {lab_wire.sym} 160 -30 2 0 {name=VIN_N sig_type=std_logic lab=VIN_N}
 C {lab_wire.sym} -160 -30 1 0 {name=VIN_P sig_type=std_logic lab=VIN_P}
 C {lab_wire.sym} 330 -110 0 0 {name=EEG_IN_CIN sig_type=std_logic lab=EEG_IN}
 C {lab_wire.sym} 330 -30 0 0 {name=VIN_N_CIN sig_type=std_logic lab=VIN_N}
+C {lab_wire.sym} -560 -110 0 0 {name=EEG_REF_CREF sig_type=std_logic lab=EEG_REF}
+C {lab_wire.sym} -560 -30 0 0 {name=VIN_P_CREF sig_type=std_logic lab=VIN_P}
 C {lab_wire.sym} -170 120 0 0 {name=VIN_P_BIAS sig_type=std_logic lab=VIN_P}
 C {lab_wire.sym} -170 180 0 0 {name=BIAS_P_IN sig_type=std_logic lab=BIAS_P}
 C {lab_wire.sym} -40 0 3 0 {name=TAIL_P sig_type=std_logic lab=TAIL_P}
