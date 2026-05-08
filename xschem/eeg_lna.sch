@@ -156,6 +156,3 @@ C {pseudo_res.sym} 310 20 0 1 {name=x1}
 C {pseudo_res.sym} 420 -70 0 1 {name=x2}
 C {sky130_fd_pr/cap_mim_m3_1.sym} 160 -70 0 0 {name=C1 model=cap_mim_m3_1 W=5 L=5 MF=1 spiceprefix=X}
 C {lab_wire.sym} -150 70 0 0 {name=BIAS_P2 sig_type=std_logic lab=BIAS_P}
-C {pseudo_res.sym} 550 170 0 1 {name=x3}
-C {lab_wire.sym} 400 180 0 0 {name=BIAS_P3 sig_type=std_logic lab=BIAS_P}
-C {lab_wire.sym} 400 160 0 0 {name=VIN_P1 sig_type=std_logic lab=VIN_P}
