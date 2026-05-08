@@ -1,4 +1,4 @@
-v {xschem version=3.4.8RC file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
@@ -35,19 +35,16 @@ N -120 -210 -120 -180 {lab=VGND}
 N 120 -210 120 -180 {lab=VGND}
 N -340 110 -340 250 {lab=VDPWR}
 N -280 -50 -280 110 {lab=BIAS_P}
-N -180 -110 -180 -90 {lab=EEG_IN}
-N -180 -30 -160 -30 {lab=VIN_P}
 N 160 -40 160 -30 {lab=VIN_N}
 N 160 -110 160 -100 {lab=VOUT}
 N 270 -110 270 -80 {lab=VOUT}
 N 160 -30 270 -30 {lab=VIN_N}
 N 270 -60 270 -30 {lab=VIN_N}
-N 330 -110 330 -100 {lab=EEG_IN}
-N 330 -40 330 -30 {lab=VIN_N}
-N -170 120 -170 140 {lab=VIN_P}
-N -170 160 -170 180 {lab=BIAS_P}
 N -560 -110 -560 -100 {lab=EEG_REF}
 N -560 -40 -560 -30 {lab=VIN_P}
+N -230 50 -230 70 {lab=BIAS_P}
+N -210 50 -160 50 {lab=VIN_P}
+N -160 -30 -160 50 {lab=VIN_P}
 C {sky130_fd_pr/nfet_01v8.sym} -100 -180 2 0 {name=M1
 W=40
 L=1.0
@@ -106,7 +103,6 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {ipin.sym} -180 -110 0 0 {name=EEG_IN lab=EEG_IN}
 C {sky130_fd_pr/pfet_01v8.sym} -20 70 2 1 {name=M5
 W=15
 L=1.0
@@ -151,19 +147,15 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/cap_mim_m3_1.sym} 330 -70 0 0 {name=CIN model=cap_mim_m3_1 W=40 L=40 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} 270 0 0 0 {name=CIN model=cap_mim_m3_1 W=40 L=40 MF=1 spiceprefix=X}
 C {sky130_fd_pr/cap_mim_m3_1.sym} -560 -70 0 0 {name=CREF model=cap_mim_m3_1 W=40 L=40 MF=1 spiceprefix=X}
 C {lab_wire.sym} 160 -30 2 0 {name=VIN_N sig_type=std_logic lab=VIN_N}
 C {lab_wire.sym} -160 -30 1 0 {name=VIN_P sig_type=std_logic lab=VIN_P}
-C {lab_wire.sym} 330 -110 0 0 {name=EEG_IN_CIN sig_type=std_logic lab=EEG_IN}
-C {lab_wire.sym} 330 -30 0 0 {name=VIN_N_CIN sig_type=std_logic lab=VIN_N}
-C {lab_wire.sym} -560 -110 0 0 {name=EEG_REF_CREF sig_type=std_logic lab=EEG_REF}
 C {lab_wire.sym} -560 -30 0 0 {name=VIN_P_CREF sig_type=std_logic lab=VIN_P}
-C {lab_wire.sym} -170 120 0 0 {name=VIN_P_BIAS sig_type=std_logic lab=VIN_P}
-C {lab_wire.sym} -170 180 0 0 {name=BIAS_P_IN sig_type=std_logic lab=BIAS_P}
 C {lab_wire.sym} -40 0 3 0 {name=TAIL_P sig_type=std_logic lab=TAIL_P}
 C {lab_wire.sym} 30 -180 3 0 {name=MIRROR_BIAS_N sig_type=std_logic lab=MIRROR_BIAS_N}
-C {pseudo_res.sym} -20 150 0 1 {name=xpinbias}
+C {pseudo_res.sym} -220 -100 3 1 {name=xpinbias}
 C {pseudo_res.sym} 420 -70 0 1 {name=x2}
 C {sky130_fd_pr/cap_mim_m3_1.sym} 160 -70 0 0 {name=C1 model=cap_mim_m3_1 W=5 L=5 MF=1 spiceprefix=X}
 C {lab_wire.sym} -150 70 0 0 {name=BIAS_P2 sig_type=std_logic lab=BIAS_P}
+C {ipin.sym} 270 30 3 0 {name=EEG_IN lab=EEG_IN}
