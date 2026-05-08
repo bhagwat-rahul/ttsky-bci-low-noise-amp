@@ -150,7 +150,5 @@ C {lab_pin.sym} 160 -30 2 0 {name=VIN_N sig_type=std_logic lab=VIN_N}
 C {lab_pin.sym} -160 -30 1 0 {name=VIN_P sig_type=std_logic lab=VIN_P}
 C {lab_pin.sym} -40 0 3 0 {name=TAIL_P sig_type=std_logic lab=TAIL_P}
 C {lab_pin.sym} 30 -180 3 0 {name=MIRROR_BIAS_N sig_type=std_logic lab=MIRROR_BIAS_N}
-C {lab_pin.sym} 560 50 1 0 {name=VIN_P1 sig_type=std_logic lab=VIN_P}
-C {lab_pin.sym} 560 70 2 0 {name=BIAS_P2 sig_type=std_logic lab=BIAS_P}
 C {pseudo_res.sym} 310 20 0 1 {name=x1}
 C {pseudo_res.sym} 310 -70 0 1 {name=x2}
