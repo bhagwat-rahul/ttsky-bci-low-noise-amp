@@ -11,7 +11,7 @@ N -100 40 -60 40 {lab=B}
 N 90 -20 90 10 {lab=B}
 N 50 10 50 40 {lab=A}
 N 50 40 90 40 {lab=A}
-C {sky130_fd_pr/pfet_01v8.sym} -80 10 0 1 {name=M1
+C {sky130_fd_pr/pfet_01v8.sym} -80 10 0 1 {name=M1_PSEUDO_RES
 W=0.42
 L=10
 nf=1
@@ -27,7 +27,7 @@ spiceprefix=X
 }
 C {iopin.sym} -100 -20 1 1 {name=A lab=A}
 C {iopin.sym} 90 -20 3 0 {name=B lab=B}
-C {sky130_fd_pr/pfet_01v8.sym} 70 10 0 0 {name=M2
+C {sky130_fd_pr/pfet_01v8.sym} 70 10 0 0 {name=M2_PSEUDO_RES
 W=0.42
 L=10
 nf=1
