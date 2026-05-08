@@ -160,10 +160,6 @@ C {lab_pin.sym} 160 -30 2 0 {name=VIN_N sig_type=std_logic lab=VIN_N}
 C {lab_pin.sym} -160 -30 1 0 {name=VIN_P sig_type=std_logic lab=VIN_P}
 C {lab_pin.sym} -40 0 3 0 {name=TAIL_P sig_type=std_logic lab=TAIL_P}
 C {lab_pin.sym} 30 -180 3 0 {name=MIRROR_BIAS_N sig_type=std_logic lab=MIRROR_BIAS_N}
-C {lab_pin.sym} 550 160 1 0 {name=VIN_P1 sig_type=std_logic lab=VIN_P}
-C {lab_pin.sym} 550 220 2 0 {name=BIAS_P2 sig_type=std_logic lab=BIAS_P}
-C {res.sym} 550 190 0 0 {name=R1
-value=10Gig
-footprint=1206
-device=resistor
-m=1}
+C {lab_pin.sym} 560 50 1 0 {name=VIN_P1 sig_type=std_logic lab=VIN_P}
+C {lab_pin.sym} 560 70 2 0 {name=BIAS_P2 sig_type=std_logic lab=BIAS_P}
+C {pseudo_res.sym} 410 60 0 0 {name=x1}

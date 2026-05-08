@@ -24,8 +24,13 @@ value=
 .control
 save all
 
+op
+
 tran 100u 1
+plot v(eeg_in) v(vout)
+
 ac dec 20 0.1 10k
+plot db(v(vout)/v(eeg_in))
 
 write lna_tb.raw
 .endc
