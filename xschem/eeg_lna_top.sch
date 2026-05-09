@@ -11,13 +11,13 @@ N -10 380 -10 430 {lab=OTA_INP}
 N -10 430 190 430 {lab=OTA_INP}
 N -270 430 -10 430 {lab=OTA_INP}
 N -270 460 -10 460 {lab=OTA_INN}
-N -270 500 -270 540 {lab=#net1}
-N -360 540 -270 540 {lab=#net1}
-N -360 340 -360 540 {lab=#net1}
-N -360 340 -270 340 {lab=#net1}
-N -270 340 -270 390 {lab=#net1}
-N 110 360 190 360 {lab=#net2}
-N 190 360 190 410 {lab=#net2}
+N -270 500 -270 540 {lab=VDPWR}
+N -360 540 -270 540 {lab=VDPWR}
+N -360 340 -360 540 {lab=VDPWR}
+N -360 340 -270 340 {lab=VDPWR}
+N -270 340 -270 390 {lab=VDPWR}
+N 110 360 190 360 {lab=#net1}
+N 190 360 190 410 {lab=#net1}
 N 490 430 620 430 {lab=VOUT}
 C {sky130_fd_pr/cap_mim_m3_1.sym} -40 380 3 0 {name=CIN_P model=cap_mim_m3_1 W=40 L=40 MF=1 spiceprefix=X}
 C {sky130_fd_pr/cap_mim_m3_1.sym} -40 500 3 1 {name=CIN_N model=cap_mim_m3_1 W=40 L=40 MF=1 spiceprefix=X}
@@ -35,10 +35,11 @@ C {sky130_fd_pr/cap_mim_m3_1.sym} 650 430 3 1 {name=CFB model=cap_mim_m3_1 W=20 
 C {lab_wire.sym} 160 570 1 1 {name=VCM sig_type=std_logic lab=VCM}
 C {lab_wire.sym} 160 550 2 0 {name=VGND1 sig_type=std_logic lab=VGND}
 C {lab_wire.sym} 160 530 1 0 {name=VDPWR1 sig_type=std_logic lab=VDPWR}
-C {lab_wire.sym} -270 480 0 1 {name=VCM2 sig_type=std_logic lab=VCM}
+C {lab_wire.sym} -270 480 0 1 {name=VOUT1 sig_type=std_logic lab=VOUT}
 C {lab_wire.sym} -270 410 0 1 {name=VCM3 sig_type=std_logic lab=VCM}
 C {lab_wire.sym} 110 380 2 0 {name=VGND2 sig_type=std_logic lab=VGND}
 C {lab_wire.sym} 110 400 2 0 {name=VDPWR2 sig_type=std_logic lab=VDPWR}
 C {lab_wire.sym} 40 450 3 0 {name=OTA_INN sig_type=std_logic lab=OTA_INN}
 C {lab_wire.sym} 680 430 0 1 {name=OTA_INN1 sig_type=std_logic lab=OTA_INN}
 C {lab_wire.sym} 40 430 3 1 {name=OTA_INP sig_type=std_logic lab=OTA_INP}
+C {lab_wire.sym} -360 440 3 1 {name=VDPWR3 sig_type=std_logic lab=VDPWR}
