@@ -16,8 +16,8 @@ N -360 540 -270 540 {lab=VDPWR}
 N -360 340 -360 540 {lab=VDPWR}
 N -360 340 -270 340 {lab=VDPWR}
 N -270 340 -270 390 {lab=VDPWR}
-N 110 360 190 360 {lab=xxx}
-N 190 360 190 410 {lab=xxx}
+N 110 360 190 360 {lab=BIAS_P}
+N 190 360 190 410 {lab=BIAS_P}
 N 490 430 620 430 {lab=VOUT}
 C {sky130_fd_pr/cap_mim_m3_1.sym} -40 380 3 0 {name=CIN_P model=cap_mim_m3_1 W=40 L=40 MF=1 spiceprefix=X}
 C {sky130_fd_pr/cap_mim_m3_1.sym} -40 500 3 1 {name=CIN_N model=cap_mim_m3_1 W=40 L=40 MF=1 spiceprefix=X}
