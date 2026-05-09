@@ -1,4 +1,4 @@
-v {xschem version=3.4.8RC file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
@@ -21,14 +21,15 @@ value=5pF
 footprint=1206
 device="ceramic capacitor"}
 C {code.sym} -60 -160 0 0 {name=sim_eeg_lna_top only_toplevel=false
-value="
+value=
+"
 .lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 
-.param VCM=0.9
-.param VAMP=50u
-.param FREQ=10
-
 .option savecurrents
+
+* tiny DC leak paths for convergence only
+RLEAKP x1.ota_inp GND 1T
+RLEAKN x1.ota_inn GND 1T
 
 .control
 
@@ -39,17 +40,26 @@ print v(x1.ota_inp)
 print v(x1.ota_inn)
 print v(net3)
 
-tran 1m 20
+* allow huge RC startup to settle
+tran 10m 20
 
+* actual differential input signal
 plot v(net1)-v(net4)
+
+* OTA input common-mode behavior
 plot v(x1.ota_inp)
 plot v(x1.ota_inn)
+
+* output waveform
 plot v(net3)
+
+* centered around VCM
 plot v(net3)-0.9
 
+* proper closed-loop gain measurement
 ac dec 100 0.01 100k
 
-plot db(v(net3))
+plot db(v(net3)/(v(net1)-v(net4)))
 
 .endc
 "}
