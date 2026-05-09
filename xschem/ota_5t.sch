@@ -17,7 +17,7 @@ N -460 -460 -460 -360 {lab=#net1}
 N -460 -400 -430 -400 {lab=#net1}
 N -200 -460 -200 -360 {lab=VOUT}
 C {sky130_fd_pr/pfet_01v8.sym} -480 -490 0 0 {name=MDIFF_P
-W=1
+W=5
 L=1
 nf=1
 mult=1
@@ -31,7 +31,7 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8.sym} -180 -490 0 1 {name=MDIFF_N
-W=1
+W=5
 L=1
 nf=1
 mult=1
