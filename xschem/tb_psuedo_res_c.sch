@@ -5,13 +5,15 @@ V {}
 S {}
 F {}
 E {}
-N -110 0 -50 -0 {lab=#net1}
-N -50 -0 -50 20 {lab=#net1}
-N 10 -20 10 -0 {lab=GND}
-N -50 -20 10 -20 {lab=GND}
+N 30 -20 30 -0 {lab=GND}
+N -30 -20 30 -20 {lab=GND}
+N -110 -20 -90 -20 {lab=#net1}
+N -110 -0 -30 -0 {lab=PRB}
+N -110 20 -90 20 {lab=PRA}
+N -30 -0 -30 20 {lab=PRB}
 C {pseudo_res_c.sym} -150 0 0 0 {name=x1}
-C {gnd.sym} 10 -20 3 0 {name=l1 lab=GND}
-C {vsource.sym} -80 -20 3 0 {name=VDPWR value="DC 1.8" savecurrent=false}
+C {gnd.sym} 30 -20 3 0 {name=l1 lab=GND}
+C {vsource.sym} -60 -20 3 0 {name=VDPWR value="DC 1.8" savecurrent=false}
 C {code.sym} -150 -200 0 0 {name=sim_vtest_sweep only_toplevel=false
 value=
 "
@@ -24,14 +26,20 @@ save all
 
 dc VTEST -0.5 0.5 0.005
 
+* Current through test source
 plot -i(vtest)
 plot abs(-i(vtest)) ylog
 
-let z_eff = -v(VTEST) / (i(vtest) - 1e-18)
-plot abs(z_eff) ylog
+* Effective resistance
+let z_eff = abs(v(pra,prb) / vtest#branch)
+
+plot z_eff ylog
 
 print z_eff[100]
+
 .endc
 "}
-C {vsource.sym} -80 20 3 1 {name=VTEST value="DC 0" savecurrent=false}
-C {vsource.sym} -20 0 3 1 {name=VB value="DC 0.5" savecurrent=false}
+C {vsource.sym} -60 20 3 1 {name=VTEST value="DC 0" savecurrent=false}
+C {vsource.sym} 0 0 3 1 {name=VB value="DC 0.5" savecurrent=false}
+C {lab_wire.sym} -100 0 0 0 {name=PRB sig_type=std_logic lab=PRB}
+C {lab_wire.sym} -100 20 2 1 {name=PRA sig_type=std_logic lab=PRA}
