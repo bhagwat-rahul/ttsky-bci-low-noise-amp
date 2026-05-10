@@ -30,8 +30,8 @@ dc VTEST -0.5 0.5 0.005
 plot -i(vtest)
 plot abs(-i(vtest)) ylog
 
-* Effective resistance
-let z_eff = abs(v(pra,prb) / vtest#branch)
+let z_eff = 1/(deriv(-i(vtest)) + 1e-20)
+plot abs(z_eff) ylog
 
 plot z_eff ylog
 
