@@ -1,4 +1,4 @@
-v {xschem version=3.4.8RC file_version=1.3}
+v {xschem version=3.4.8RC file_version=1.2}
 G {}
 K {}
 V {}
@@ -13,8 +13,8 @@ N 210 -20 210 60 {lab=GND}
 C {eeg_lna_top.sym} 0 0 0 0 {name=x1}
 C {gnd.sym} 150 20 0 1 {name=l1 lab=GND}
 C {vsource.sym} 180 -20 3 0 {name=VDPWR value="DC 1.8" savecurrent=false}
-C {vsource.sym} -150 30 0 1 {name=VEEG_REF value="DC 0.9 AC -0.5 SIN(0.9 50u 10)" savecurrent=false}
-C {vsource.sym} -180 -20 1 1 {name=VEEG_IN value="DC 0.9 AC 0.5 SIN(0.9 50u 10)" savecurrent=false}
+C {vsource.sym} -150 30 0 1 {name=VEEG_REF value="DC 0.9" savecurrent=false}
+C {vsource.sym} -180 -20 1 1 {name=VEEG_IN value="DC 0.9 AC 0.5 SIN(0.9 25u 10)" savecurrent=false}
 C {capa.sym} 180 0 1 0 {name=CLOAD
 m=1
 value=5pF
@@ -25,41 +25,54 @@ value=
 "
 .lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 
+.ic v(net3)=0.84 v(x1.ota_inp)=0.84 v(x1.ota_inn)=0.84
++   v(x1.x_ota.tail_p)=1.55 v(x1.x_ota.net1)=0.5
++   v(x1.x_rpseudo_p.net1)=0.84 v(x1.x_rpseudo_fb.net1)=0.84
+
+.nodeset v(net3)=0.84 v(x1.ota_inp)=0.84 v(x1.ota_inn)=0.84
++        v(x1.x_ota.tail_p)=1.55 v(x1.x_ota.net1)=0.5
++        v(x1.x_rpseudo_p.net1)=0.84 v(x1.x_rpseudo_fb.net1)=0.84
+
 .option savecurrents
 
-* tiny DC leak paths for convergence only
-RLEAKP x1.ota_inp GND 1T
-RLEAKN x1.ota_inn GND 1T
-
 .control
-
 op
+echo ===== Bias Verification =====
+print @m.x1.x_ota.xmtail[id]
+print v(x1.x_ota.tail_p)
+print v(x1.bias_p)
+print @m.x1.x_ota.xmdiff_p[id]
+print @m.x1.x_ota.xmdiff_n[id]
 
-print v(x1.vcm)
+echo ===== Operating Point =====
 print v(x1.ota_inp)
 print v(x1.ota_inn)
+print v(x1.ota_inp)-v(x1.ota_inn)
 print v(net3)
 
-* allow huge RC startup to settle
-tran 10m 20
-
-* actual differential input signal
-plot v(net1)-v(net4)
-
-* OTA input common-mode behavior
+echo ===== Transient =====
+tran 1m 20 uic
+plot v(net1)
 plot v(x1.ota_inp)
 plot v(x1.ota_inn)
-
-* output waveform
+plot v(x1.ota_inp)-v(x1.ota_inn)
 plot v(net3)
+plot v(net3)-0.84
 
-* centered around VCM
-plot v(net3)-0.9
+echo ===== Noise =====
+noise v(net3) veeg_in dec 100 0.5 100
 
-* proper closed-loop gain measurement
+* Active plot is the "totals" plot — print integrated values
+print inoise_total
+print onoise_total
+
+* Switch to the spectrum plot to see vs frequency
+setplot previous
+plot db(inoise_spectrum)
+plot db(onoise_spectrum)
+
+echo ===== AC =====
 ac dec 100 0.01 100k
-
-plot db(v(net3)/(v(net1)-v(net4)))
-
+plot db(v(net3)/v(net1))
 .endc
 "}
