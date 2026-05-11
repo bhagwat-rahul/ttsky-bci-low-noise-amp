@@ -34,6 +34,10 @@ value=
 +        v(x1.x_rpseudo_p.net1)=0.5 v(x1.x_rpseudo_fb.net1)=0.5
 
 .option savecurrents
+.option rshunt=1e15
+.option gmin=1e-15
+.option method=gear
+.option cshunt=1e-15
 
 .control
 op
@@ -51,7 +55,7 @@ print v(x1.ota_inp)-v(x1.ota_inn)
 print v(net3)
 
 echo ===== Transient =====
-tran 1m 20 uic
+tran 1m 20
 plot v(net1)
 plot v(x1.ota_inp)
 plot v(x1.ota_inn)
