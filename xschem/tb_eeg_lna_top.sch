@@ -23,7 +23,7 @@ device="ceramic capacitor"}
 C {code.sym} -60 -160 0 0 {name=sim_eeg_lna_top only_toplevel=false
 value=
 "
-.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt_mm
 
 .ic v(net3)=0.5 v(x1.ota_inp)=0.5 v(x1.ota_inn)=0.5
 +   v(x1.x_ota.tail_p)=1.5 v(x1.x_ota.net1)=0.5

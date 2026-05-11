@@ -17,7 +17,7 @@ C {vsource.sym} -60 -20 3 0 {name=VDPWR value="DC 1.8" savecurrent=false}
 C {code.sym} -150 -200 0 0 {name=sim_vtest_sweep only_toplevel=false
 value=
 "
-.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt_mm
 .option savecurrents
 .temp 27
 

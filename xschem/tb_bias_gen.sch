@@ -14,7 +14,7 @@ C {code.sym} -80 -170 0 0 {name=sim_bias_gen only_toplevel=false
 
 value=
 "
-.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt_mm
 
 .option savecurrents
 

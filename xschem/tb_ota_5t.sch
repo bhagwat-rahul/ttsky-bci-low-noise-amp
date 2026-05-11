@@ -25,10 +25,10 @@ C {vsource.sym} -240 -50 0 0 {name=VIN_N_SRC value="DC \{VCM\} AC -0.5 SIN(\{VCM
 C {vsource.sym} 150 -120 3 0 {name=VDPWR value="DC 1.8" savecurrent=false}
 C {gnd.sym} 60 -40 1 1 {name=l1 lab=GND}
 C {lab_wire.sym} -240 -160 0 1 {name=VDPWR1 sig_type=std_logic lab=VDPWR}
-C {code.sym} -120 -300 0 0 {name=sim_5t_ota only_toplevel=false 
+C {code.sym} -120 -300 0 0 {name=sim_5t_ota only_toplevel=false
 value=
 "
-.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt_mm
 
 * =====================================================
 * PARAMETERS
