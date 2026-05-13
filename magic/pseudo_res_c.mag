@@ -1,0 +1,20 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1778672185
+<< error_s >>
+rect 1268 415 1303 449
+rect 1269 396 1303 415
+rect 1288 -17 1303 396
+rect 1322 362 1357 396
+rect 1322 -17 1356 362
+rect 1322 -51 1337 -17
+use sky130_fd_pr__pfet_01v8_SF6GDQ  XP1
+timestamp 1778672185
+transform 1 0 643 0 1 216
+box -696 -269 696 269
+use sky130_fd_pr__pfet_01v8_SF6GDQ  XP2
+timestamp 1778672185
+transform 1 0 1982 0 1 163
+box -696 -269 696 269
+<< end >>
