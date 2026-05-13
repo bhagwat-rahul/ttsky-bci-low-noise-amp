@@ -1,0 +1,19 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1778672550
+<< error_s >>
+rect 669 414 703 432
+rect 669 378 739 414
+rect 686 344 757 378
+rect 686 -17 756 344
+rect 686 -53 739 -17
+use sky130_fd_pr__nfet_01v8_AAS3EU  XM_BIAS_N
+timestamp 1778672550
+transform 1 0 1082 0 1 154
+box -396 -260 396 260
+use sky130_fd_pr__pfet_01v8_KLMCYL  XM_BIAS_P
+timestamp 1778672550
+transform 1 0 343 0 1 266
+box -396 -319 396 319
+<< end >>
