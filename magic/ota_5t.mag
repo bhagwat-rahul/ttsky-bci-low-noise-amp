@@ -1,0 +1,66 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1778672714
+<< error_s >>
+rect 3415 7915 3450 7949
+rect 3416 7896 3450 7915
+rect 3435 -2017 3450 7896
+rect 3469 7862 3504 7896
+rect 3469 -2017 3503 7862
+rect 12432 -262 12467 -228
+rect 12433 -281 12467 -262
+rect 6955 -1657 6989 -1603
+rect 8947 -1621 8981 -1603
+rect 3469 -2051 3484 -2017
+rect 6974 -2070 6989 -1657
+rect 7008 -1691 7043 -1657
+rect 7008 -2070 7042 -1691
+rect 7008 -2104 7023 -2070
+rect 8911 -2123 8981 -1621
+rect 8911 -2159 8964 -2123
+rect 12452 -2176 12467 -281
+rect 12486 -315 12521 -281
+rect 12486 -2176 12520 -315
+rect 12486 -2210 12501 -2176
+<< metal1 >>
+rect 0 0 200 200
+rect 0 -400 200 -200
+rect 0 -800 200 -600
+rect 0 -1200 200 -1000
+rect 0 -1600 200 -1400
+rect 0 -2000 200 -1800
+use sky130_fd_pr__pfet_01v8_YLC4GL  XMDIFF_N
+timestamp 1778672714
+transform 1 0 5229 0 1 2913
+box -1796 -5019 1796 5019
+use sky130_fd_pr__pfet_01v8_YLC4GL  XMDIFF_P
+timestamp 1778672714
+transform 1 0 1690 0 1 2966
+box -1796 -5019 1796 5019
+use sky130_fd_pr__nfet_01v8_RD9KXH  XMLOAD_OUT
+timestamp 1778672714
+transform 1 0 14246 0 1 -1255
+box -1796 -1010 1796 1010
+use sky130_fd_pr__nfet_01v8_RD9KXH  XMLOAD_REF
+timestamp 1778672714
+transform 1 0 10707 0 1 -1202
+box -1796 -1010 1796 1010
+use sky130_fd_pr__pfet_01v8_WEZ9AX  XMTAIL
+timestamp 1778672714
+transform 1 0 7968 0 1 -1890
+box -996 -269 996 269
+<< labels >>
+flabel metal1 0 0 200 200 0 FreeSans 1600 0 0 0 BIAS_P
+port 0 nsew
+flabel metal1 0 -400 200 -200 0 FreeSans 1600 0 0 0 VDPWR
+port 1 nsew
+flabel metal1 0 -800 200 -600 0 FreeSans 1600 0 0 0 VIN_P
+port 2 nsew
+flabel metal1 0 -1200 200 -1000 0 FreeSans 1600 0 0 0 VIN_N
+port 3 nsew
+flabel metal1 0 -1600 200 -1400 0 FreeSans 1600 0 0 0 VOUT
+port 4 nsew
+flabel metal1 0 -2000 200 -1800 0 FreeSans 1600 0 0 0 VGND
+port 5 nsew
+<< end >>
