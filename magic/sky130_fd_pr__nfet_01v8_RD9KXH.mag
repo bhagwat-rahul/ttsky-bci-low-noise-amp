@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1778672714
+timestamp 1778754472
 << pwell >>
 rect -1796 -1010 1796 1010
 << nmos >>
@@ -85,13 +85,13 @@ rect 1584 -872 1596 -838
 rect -1596 -878 1596 -872
 << labels >>
 rlabel psubdiffcont 0 -957 0 -957 0 B
-port 13 nsew
+port 5 nsew
 rlabel ndiffc -1629 0 -1629 0 0 D
-port 14 nsew
+port 6 nsew
 rlabel ndiffc 1629 0 1629 0 0 S
-port 15 nsew
+port 7 nsew
 rlabel polycont 0 855 0 855 0 G
-port 16 nsew
+port 8 nsew
 << properties >>
 string FIXED_BBOX -1743 -957 1743 957
 string gencell sky130_fd_pr__nfet_01v8

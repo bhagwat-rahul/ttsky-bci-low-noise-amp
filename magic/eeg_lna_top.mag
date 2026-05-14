@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1778672714
+timestamp 1778754472
 << error_p >>
 rect 16385 10180 16420 10214
 rect 16386 10161 16420 10180
@@ -42,31 +42,31 @@ rect 32482 89 32552 450
 rect 30387 55 30402 89
 rect 32482 53 32535 89
 use bias_gen  x_bias
-timestamp 1778672714
-transform 1 0 31849 0 1 906
-box -106 -906 1425 200
+timestamp 1778754472
+transform 1 0 31796 0 1 906
+box -53 -906 1478 200
 use ota_5t  x_ota
-timestamp 1778672714
-transform 1 0 12970 0 1 2265
-box -106 -2265 16042 7985
+timestamp 1778754472
+transform 1 0 12917 0 1 2265
+box -53 -2265 16095 7985
 use pseudo_res_c  x_rpseudo_fb
-timestamp 1778672714
-transform 1 0 37812 0 1 906
-box -106 -906 2625 200
+timestamp 1778754472
+transform 1 0 37759 0 1 906
+box -53 -906 2678 200
 use pseudo_res_c  x_rpseudo_p
-timestamp 1778672714
-transform 1 0 29118 0 1 906
-box -106 -906 2625 200
+timestamp 1778754472
+transform 1 0 29065 0 1 906
+box -53 -906 2678 200
 use sky130_fd_pr__cap_mim_m3_1_TPVD7H  XCFB
-timestamp 1778672714
+timestamp 1778754472
 transform 1 0 35490 0 1 2040
 box -2216 -2040 2216 2040
 use sky130_fd_pr__cap_mim_m3_1_6NZ97H  XCIN_N
-timestamp 1778672714
+timestamp 1778754472
 transform 1 0 9648 0 1 3040
 box -3216 -3040 3216 3040
 use sky130_fd_pr__cap_mim_m3_1_6NZ97H  XCIN_P
-timestamp 1778672714
+timestamp 1778754472
 transform 1 0 3216 0 1 3040
 box -3216 -3040 3216 3040
 << end >>
