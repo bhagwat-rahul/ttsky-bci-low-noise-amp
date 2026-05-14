@@ -1,31 +1,27 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1778754472
+timestamp 1778763378
 << error_s >>
-rect 1268 -385 1303 -351
-rect 1269 -404 1303 -385
-rect 1288 -817 1303 -404
-rect 1322 -438 1357 -404
-rect 1322 -817 1356 -438
-rect 1322 -851 1337 -817
+rect 1152 -468 1199 -465
+rect 1406 -1003 1453 -468
 << metal1 >>
-rect 0 0 200 200
-rect 0 -400 200 -200
-rect 0 -800 200 -600
+rect 600 -200 800 0
+rect 2000 -200 2200 0
+rect 1200 -1400 1400 -1200
 use sky130_fd_pr__pfet_01v8_SF6GDQ  XP1
-timestamp 1778754472
-transform 1 0 643 0 1 -584
+timestamp 1778763378
+transform 1 0 503 0 1 -734
 box -696 -269 696 269
 use sky130_fd_pr__pfet_01v8_SF6GDQ  XP2
-timestamp 1778754472
-transform 1 0 1982 0 1 -637
+timestamp 1778763378
+transform 1 0 2102 0 1 -737
 box -696 -269 696 269
 << labels >>
-flabel metal1 0 0 200 200 0 FreeSans 1600 0 0 0 VDPWR
-port 0 nsew
-flabel metal1 0 -400 200 -200 0 FreeSans 1600 0 0 0 B
-port 1 nsew
-flabel metal1 0 -800 200 -600 0 FreeSans 1600 0 0 0 A
+flabel metal1 2000 -200 2200 0 0 FreeSans 1600 0 0 0 A
 port 2 nsew
+flabel metal1 600 -200 800 0 0 FreeSans 1600 0 0 0 B
+port 1 nsew
+flabel metal1 1200 -1400 1400 -1200 0 FreeSans 1600 0 0 0 VDPWR
+port 0 nsew
 << end >>
