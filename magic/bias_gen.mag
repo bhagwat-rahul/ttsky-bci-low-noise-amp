@@ -1,30 +1,55 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1778754472
-<< error_s >>
-rect 669 -386 703 -368
-rect 669 -422 739 -386
-rect 686 -456 757 -422
-rect 686 -817 756 -456
-rect 686 -853 739 -817
+timestamp 1778778506
+<< viali >>
+rect 898 -102 996 22
+rect 1815 -449 1850 -400
+rect -25 -500 15 -450
+rect -29 -1036 109 -890
+rect 1750 -1021 1899 -848
 << metal1 >>
-rect 0 0 200 200
-rect 0 -400 200 -200
-rect 0 -800 200 -600
+rect 840 22 1040 66
+rect 840 -102 898 22
+rect 996 -102 1040 22
+rect 840 -134 1040 -102
+rect 878 -280 1012 -134
+rect 458 -338 1382 -280
+rect -41 -440 58 -439
+rect -41 -450 130 -440
+rect -41 -500 -25 -450
+rect 15 -500 130 -450
+rect 578 -460 636 -338
+rect 1202 -442 1252 -338
+rect 1689 -391 1861 -388
+rect 1689 -400 1870 -391
+rect 1689 -449 1815 -400
+rect 1850 -449 1870 -400
+rect 1689 -465 1870 -449
+rect -41 -510 130 -500
+rect -41 -862 58 -510
+rect 1808 -829 1870 -465
+rect 1717 -848 1917 -829
+rect -50 -890 150 -862
+rect -50 -1036 -29 -890
+rect 109 -1036 150 -890
+rect 1717 -1021 1750 -848
+rect 1899 -1021 1917 -848
+rect 1717 -1029 1917 -1021
+rect -50 -1062 150 -1036
 use sky130_fd_pr__nfet_01v8_AAS3EU  XM_BIAS_N
 timestamp 1778754472
-transform 1 0 1082 0 1 -646
+transform 1 0 1482 0 1 -426
 box -396 -260 396 260
 use sky130_fd_pr__pfet_01v8_KLMCYL  XM_BIAS_P
 timestamp 1778754472
-transform 1 0 343 0 1 -534
+transform -1 0 343 0 -1 -484
 box -396 -319 396 319
 << labels >>
-flabel metal1 0 0 200 200 0 FreeSans 1600 0 0 0 BIAS_P
+flabel metal1 840 -134 1040 66 0 FreeSans 1600 0 0 0 BIAS_P
 port 0 nsew
-flabel metal1 0 -400 200 -200 0 FreeSans 1600 0 0 0 VGND
+flabel metal1 1717 -1029 1917 -829 0 FreeSans 1600 0 0 0 VGND
 port 1 nsew
-flabel metal1 0 -800 200 -600 0 FreeSans 1600 0 0 0 VDPWR
+flabel metal1 -50 -1062 150 -862 0 FreeSans 1600 0 0 0 VDPWR
 port 2 nsew
 << end >>
