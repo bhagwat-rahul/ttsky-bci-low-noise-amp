@@ -32,7 +32,7 @@ use sky130_fd_pr__cap_mim_m3_1_6NZ97H  XCIN_N
 timestamp 1778852898
 transform 1 0 11848 0 1 3040
 box -2216 -4400 2216 4400
-use sky130_fd_pr__cap_mim_m3_1_VAVPG2  XCIN_P
+use sky130_fd_pr__cap_mim_m3_1_6NZ97H  XCIN_P
 timestamp 1778849064
 transform 1 0 3216 0 1 13040
 box -3216 -6400 3216 6400
