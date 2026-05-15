@@ -1,4 +1,4 @@
-v {xschem version=3.4.8RC file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
@@ -14,7 +14,7 @@ N 490 430 620 430 {lab=VOUT}
 N 620 430 620 480 {lab=VOUT}
 N 620 380 620 430 {lab=VOUT}
 N 190 350 190 410 {lab=BIAS_P}
-C {sky130_fd_pr/cap_mim_m3_1.sym} -40 380 3 0 {name=CIN_P model=cap_mim_m3_1 W=40 L=40 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -40 380 3 0 {name=CIN_P model=cap_mim_m3_1 W=30 L=30 MF=2 spiceprefix=X}
 C {sky130_fd_pr/cap_mim_m3_1.sym} 90 580 2 0 {name=CIN_N model=cap_mim_m3_1 W=40 L=40 MF=1 spiceprefix=X}
 C {ipin.sym} -70 380 0 0 {name=EEG_IN lab=EEG_IN}
 C {ipin.sym} 90 610 1 1 {name=EEG_REF lab=EEG_REF}
