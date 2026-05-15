@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1778852166
+timestamp 1778853034
 << metal1 >>
 rect 30000 10000 30200 10200
 rect 30800 10000 31000 10200
@@ -29,9 +29,9 @@ timestamp 1778754472
 transform 1 0 35490 0 1 2040
 box -2216 -2040 2216 2040
 use sky130_fd_pr__cap_mim_m3_1_6NZ97H  XCIN_N
-timestamp 1778754472
+timestamp 1778852898
 transform 1 0 11848 0 1 3040
-box -3216 -3040 3216 3040
+box -2216 -4400 2216 4400
 use sky130_fd_pr__cap_mim_m3_1_VAVPG2  XCIN_P
 timestamp 1778849064
 transform 1 0 3216 0 1 13040
