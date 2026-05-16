@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1778936760
+timestamp 1778937500
 << metal1 >>
 rect 1804 18214 4841 18221
 rect 1394 18098 4841 18214
@@ -133,7 +133,7 @@ rect 14299 2 15271 3
 rect 14381 0 14471 2
 rect 15181 0 15271 2
 use eeg_lna_top  eeg_lna_top_0
-timestamp 1778929769
+timestamp 1778937460
 transform 0 1 -61 -1 0 35228
 box 14799 2289 33247 8743
 << labels >>
