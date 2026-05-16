@@ -1,4 +1,4 @@
-v {xschem version=3.4.8RC file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
@@ -24,7 +24,7 @@ C {opin.sym} 620 380 0 0 {name=VOUT lab=VOUT}
 C {ota_5t.sym} 340 430 0 0 {name=x_ota}
 C {pseudo_res_c.sym} -50 500 2 1 {name=x_rpseudo_p}
 C {bias_gen.sym} 220 330 2 0 {name=x_bias}
-C {sky130_fd_pr/cap_mim_m3_1.sym} 650 480 3 1 {name=CFB model=cap_mim_m3_1 W=20 L=20 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} 650 480 1 1 {name=CFB model=cap_mim_m3_1 W=20 L=20 MF=1 spiceprefix=X}
 C {lab_wire.sym} -10 500 2 0 {name=VOUT1 sig_type=std_logic lab=VOUT}
 C {lab_wire.sym} 190 330 0 0 {name=VGND2 sig_type=std_logic lab=VGND}
 C {lab_wire.sym} 190 310 0 0 {name=VDPWR2 sig_type=std_logic lab=VDPWR}
