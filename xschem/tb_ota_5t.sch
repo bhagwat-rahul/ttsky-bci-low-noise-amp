@@ -68,8 +68,10 @@ plot v(vout)
 
 ac dec 100 1 1G
 
-plot db(v(vout))
-plot ph(v(vout))
+let vdiff = v(vin_p)-v(vin_n)
+
+plot db(v(vout)/vdiff)
+plot phase(v(vout)/vdiff)
 
 .endc
 "}
