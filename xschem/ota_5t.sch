@@ -18,7 +18,7 @@ N -460 -400 -430 -400 {lab=#net1}
 N -200 -460 -200 -360 {lab=VOUT}
 C {sky130_fd_pr/pfet_01v8.sym} -480 -490 0 0 {name=MDIFF_P
 W=48
-L=16
+L=4
 nf=1
 mult=1
 ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
@@ -32,7 +32,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8.sym} -180 -490 0 1 {name=MDIFF_N
 W=48
-L=16
+L=4
 nf=1
 mult=1
 ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
