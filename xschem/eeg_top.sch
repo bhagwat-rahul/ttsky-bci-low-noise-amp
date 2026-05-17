@@ -50,26 +50,6 @@ C {ota_5t.sym} 0 0 0 0 {name=x1}
 C {pseudo_res_c.sym} -380 190 2 1 {name=x2}
 C {bias_gen.sym} -210 -40 2 1 {name=x3}
 C {pseudo_res_c.sym} -380 -160 0 0 {name=x4}
-C {capa.sym} 30 120 1 0 {name=Cf2
-m=1
-value=1p
-footprint=1206
-device="ceramic capacitor"}
-C {capa.sym} 30 -120 1 0 {name=Cf1
-m=1
-value=1p
-footprint=1206
-device="ceramic capacitor"}
-C {capa.sym} -430 -100 1 0 {name=Cin1
-m=1
-value=10p
-footprint=1206
-device="ceramic capacitor"}
-C {capa.sym} -430 100 1 0 {name=Cin2
-m=1
-value=10p
-footprint=1206
-device="ceramic capacitor"}
 C {lab_wire.sym} -150 -20 0 1 {name=BIAS_P sig_type=std_logic lab=BIAS_P}
 C {ipin.sym} -500 -100 0 0 {name=EEG_IN lab=EEG_IN}
 C {ipin.sym} -500 100 0 0 {name=EEG_REF lab=EEG_REF}
@@ -80,3 +60,7 @@ C {opin.sym} 260 0 0 0 {name=VOUT lab=VOUT}
 C {lab_wire.sym} -300 0 0 0 {name=OTA_INP sig_type=std_logic lab=OTA_INP}
 C {lab_wire.sym} -160 100 0 0 {name=OTA_INN sig_type=std_logic lab=OTA_INN}
 C {lab_wire.sym} -300 180 3 1 {name=BIAS_VCM sig_type=std_logic lab=BIAS_VCM}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -430 -100 1 0 {name=Cin1 model=cap_mim_m3_1 W=30 L=30 MF=2 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -430 100 1 0 {name=Cin2 model=cap_mim_m3_1 W=30 L=30 MF=2 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} 30 -120 1 0 {name=Cf1 model=cap_mim_m3_1 W=16 L=16 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} 30 120 1 0 {name=Cf2 model=cap_mim_m3_1 W=16 L=16 MF=1 spiceprefix=X}
