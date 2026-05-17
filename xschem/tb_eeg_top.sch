@@ -95,4 +95,4 @@ C {lab_wire.sym} -160 -20 1 0 {name=EEG_IN sig_type=std_logic lab=EEG_IN}
 C {lab_wire.sym} 160 0 2 0 {name=VOUT sig_type=std_logic lab=VOUT}
 C {lab_wire.sym} -150 0 3 0 {name=EEG_REF sig_type=std_logic lab=EEG_REF}
 C {lab_wire.sym} 160 -20 1 0 {name=VDPWR1 sig_type=std_logic lab=VDPWR}
-C {eeg_top.sym} 0 0 0 0 {name=x2}
+C {eeg_top.sym} 0 0 0 0 {name=x1}
