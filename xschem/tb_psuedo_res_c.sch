@@ -27,7 +27,6 @@ save all
 dc VTEST -0.5 0.5 0.005
 
 * Current through test source
-plot -i(vtest)
 plot abs(-i(vtest)) ylog
 
 let z_eff = 1/(deriv(-i(vtest)) + 1e-20)
