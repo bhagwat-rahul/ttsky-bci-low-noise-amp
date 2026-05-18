@@ -44,7 +44,6 @@ value=
 .lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt_mm
 
 .ic v(VOUT)=0.5 v(x1.ota_inp)=0.5 v(x1.ota_inn)=0.5
-
 .nodeset v(VOUT)=0.5 v(x1.ota_inp)=0.5 v(x1.ota_inn)=0.5
 
 .option savecurrents
@@ -63,20 +62,19 @@ print v(x1.ota_inn)
 print v(x1.ota_inp)-v(x1.ota_inn)
 print v(VOUT)
 print v(x1.bias_vcm)
-print v(x1.x_ota.tail_p)
 
-echo ===== DC OFFSET TEST =====
+echo ===== LONG DC OFFSET TEST =====
 
-tran 10m 100
+tran 50m 500
 
 plot v(x1.ota_inp)
 plot v(x1.ota_inn)
 plot v(VOUT)
 plot v(x1.bias_vcm)
 
-meas tran VOUT_FINAL FIND v(VOUT) AT=100
-meas tran VINP_FINAL FIND v(x1.ota_inp) AT=100
-meas tran VINN_FINAL FIND v(x1.ota_inn) AT=100
+meas tran VOUT_FINAL FIND v(VOUT) AT=500
+meas tran VINP_FINAL FIND v(x1.ota_inp) AT=500
+meas tran VINN_FINAL FIND v(x1.ota_inn) AT=500
 
 echo ===== Final Values =====
 print vout_final
