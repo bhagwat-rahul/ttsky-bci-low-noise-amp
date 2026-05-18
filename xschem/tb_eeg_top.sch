@@ -72,14 +72,13 @@ plot v(VOUT)-0.84
 echo ===== Noise =====
 noise v(VOUT) veeg_in dec 100 0.5 100
 
-* Active plot is the "totals" plot — print integrated values
+* integrated noise over band
 print inoise_total
 print onoise_total
 
-* Switch to the spectrum plot to see vs frequency
+* optional: inspect shape only when debugging
 setplot previous
-plot db(inoise_spectrum)
-plot db(onoise_spectrum)
+plot onoise_spectrum
 
 echo ===== AC =====
 ac dec 100 0.01 100k
