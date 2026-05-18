@@ -32,12 +32,8 @@ value=
 .lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt_mm
 
 .ic v(VOUT)=0.5 v(x1.ota_inp)=0.5 v(x1.ota_inn)=0.5
-+   v(x1.x_ota.tail_p)=1.5 v(x1.x_ota.EEG_IN)=0.5
-+   v(x1.x_rpseudo_p.EEG_IN)=0.5 v(x1.x_rpseudo_fb.EEG_IN)=0.5
 
 .nodeset v(VOUT)=0.5 v(x1.ota_inp)=0.5 v(x1.ota_inn)=0.5
-+        v(x1.x_ota.tail_p)=1.5 v(x1.x_ota.EEG_IN)=0.5
-+        v(x1.x_rpseudo_p.EEG_IN)=0.5 v(x1.x_rpseudo_fb.EEG_IN)=0.5
 
 .option savecurrents
 .option rshunt=1e15
@@ -70,6 +66,7 @@ plot v(VOUT)
 plot v(VOUT)-0.84
 
 echo ===== Noise =====
+
 noise v(VOUT) veeg_in dec 100 0.5 100
 
 * integrated noise over band
@@ -85,7 +82,6 @@ ac dec 100 0.01 100k
 plot db(v(VOUT)/v(EEG_IN))
 
 plot db(v(x1.ota_inp)/v(EEG_IN))
-plot db(v(x1.ota_inn)/v(EEG_REF))
 plot db(v(VOUT)/(v(x1.ota_inp)-v(x1.ota_inn)))
 
 .endc
